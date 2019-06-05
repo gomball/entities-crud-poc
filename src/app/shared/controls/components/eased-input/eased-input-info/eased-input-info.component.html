@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{'info' | translate}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <table class="table table-xs table-hover">
+    <colgroup>
+      <col style="width: 50%;">
+      <col style="width: 50%">
+    </colgroup>
+    <tbody>
+    <tr *ngFor="let property of properties">
+      <td>{{property | translate}}</td>
+      <td>{{element[property]}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

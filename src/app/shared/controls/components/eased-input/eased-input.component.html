@@ -1,0 +1,23 @@
+<!-- label inserted by 'ControlLayoutDirective' -->
+<div class="input-group">
+  <input #textInputElement type="text" class="form-control" [ngClass]="!isControlValid ? 'is-invalid' : ''" ngModel
+    (ngModelChange)="onTextChange($event)">
+  <div class="input-group-append">
+    <button [show]="internalStatus === 'waitingInput'" type="button" class="btn btn-gray-very-light">
+      <span class="fas fa-fw fa-arrow-left"></span>
+    </button>
+    <button [show]="internalStatus === 'searching'" type="button" class="btn btn-info">
+      <span class="fas fa-fw fa-cog fa-spin"></span>
+    </button>
+    <button [show]="internalStatus === 'ambiguous'" type="button" class="btn btn-warning" (click)="openHelp()">
+      <span class="fas fa-fw fa-table"></span>
+    </button>
+    <button [show]="internalStatus === 'noResult'" type="button" class="btn btn-danger">
+      <span class="fas fa-fw fa-exclamation"></span>
+    </button>
+    <button [show]="internalStatus === 'settled'" type="button" class="btn btn-success" (click)="openHelp()">
+      <span class="fas fa-fw fa-info"></span>
+    </button>
+  </div>
+  <input #helpInputElement type="text" class="form-control" disabled="disabled">
+</div>

@@ -1,0 +1,74 @@
+<div class="container-fluid h-100 p-0">
+  <div class="row no-gutters h-100">
+    <div class='col h-100 d-none d-md-block left-block'>
+      <h1 class="display-1 text-right px-4 py-2">
+        App
+      </h1>
+      <div class="app-logo-container">
+        <img class="d-block m-auto" src="assets/images/brain_no-shadow.png" alt="brain">
+      </div>
+    </div>
+    <div class='col p-4 right-block'>
+      <div class="form-container w-75 m-auto">
+        <div class="right-block-header d-md-none">
+          <img class="" src="assets/images/brain_no-shadow.png" alt="brain">
+          App
+        </div>
+        <div class="right-block-subheader">
+          {{'access' | translate}}
+        </div>
+        <form [formGroup]="loginForm">
+          <div class="row form-group mb-1">
+            <label for="" class="col-form-label col-xs-12 col-xl-3">{{'account' | translate}}</label>
+            <div class="input-group col-xs-12 col-xl-9">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><span class="fas fa-fw fa-user-tag"></span></span>
+              </div>
+              <input type="text" class="form-control" formControlName='tenantName'>
+            </div>
+          </div>
+
+          <div class="row form-group mb-1">
+            <label for="" class="col-form-label col-xs-12 col-xl-3">{{'user' | translate}}</label>
+            <div class="col-xs-12 col-xl-9">
+              <div class="input-group">
+                <input type="text" class="form-control" formControlName='userName'>
+                <div class="input-group-append">
+                  <div class="input-group-text"><span class="fas fa-fw fa-user"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="" class="col-form-label col-xs-12 col-xl-3">{{'password' | translate}}</label>
+            <div class="col-xs-12 col-xl-9">
+              <div class="input-group">
+                <input type="password" class="form-control" formControlName='password'>
+                <div class="input-group-append">
+                  <div class="input-group-text"><span class="fas fa-fw fa-key"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col">
+              <button type="button" class="btn btn-lg btn-primary btn-block" [disabled]="loginForm.invalid" (click)="login()">
+                {{'login' | translate}}
+                <span class="fas fa-arrow-right"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12 text-right">
+              <img class="" style="width: 100px;" src="assets/images/gomball-logo.png" alt="gomball-logo">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

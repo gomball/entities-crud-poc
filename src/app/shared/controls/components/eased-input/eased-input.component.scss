@@ -1,0 +1,19 @@
+@import '../../../../../styles/variables/bootstrap';
+
+@mixin eased-input-button($mode) {
+  &.btn-#{$mode} {
+    color: var(--white);
+    background: var(--#{$mode});
+  }
+}
+
+button {
+  min-width: 1.5rem;
+  background: var(--white);
+  border-right-width: 0;
+
+  @include eased-input-button('info');
+  @include eased-input-button('warning');
+  @include eased-input-button('danger');
+  @include eased-input-button('success');
+}

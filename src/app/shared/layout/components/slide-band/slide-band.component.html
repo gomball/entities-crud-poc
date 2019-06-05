@@ -1,0 +1,16 @@
+<span class="slide-band-tittle">{{titleKey | translate}}</span>
+
+<div class="btn-group" ecpCoreControlLayout size="md">
+  <button *ngIf="!opened" type="button" class="btn btn-gray-very-dark toggle-button" (click)="open()">
+    <span class="fas fa-chevron-right"></span>
+  </button>
+  <button *ngIf="!opened" type="button" class="btn btn-outline-gray-dark" (click)="open()">
+    <span [class]="icon"></span>
+  </button>
+
+  <button *ngIf="opened" type="button" class="btn btn-primary toggle-button" (click)="closeAll()">
+    <span class="fas fa-chevron-left"></span>
+  </button>
+  <ng-content *ngIf="opened" select="ecp-slide-band-button">
+  </ng-content>
+</div>

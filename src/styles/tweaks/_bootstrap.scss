@@ -1,0 +1,48 @@
+@import '../variables/bootstrap';
+
+.btn:not([class*='btn-outline-']).disabled,
+.btn:not([class*='btn-outline-']):disabled {
+  background-color: theme-color("gray-light");
+  border-color: theme-color("gray-light");
+}
+.btn[class*='btn-outline-'].disabled,
+.btn[class*='btn-outline-']:disabled {
+  color: theme-color("gray-light");
+  border-color: theme-color("gray-light");
+}
+
+$table-cell-padding-xs:         $table-cell-padding-sm / 2;
+$table-cell-padding-xxs:        $table-cell-padding-xs / 2;
+.table-xs {
+  th,
+  td {
+    font-size: $font-size-sm * 0.9;
+    padding: $table-cell-padding-xs;
+  }
+}
+.table-xxs {
+  th,
+  td {
+    font-size: $font-size-sm * 0.8;
+    padding: $table-cell-padding-xxs;
+  }
+}
+
+.modal-body {
+  overflow: auto;
+}
+
+
+//select.form-control-sm {
+//  height: calc(1.48rem + 1px) !important;
+//  padding-top: 0;
+//  padding-bottom: 0;
+//  font-size: $font-size-sm;
+//}
+//.custom-select-sm {
+//  height: calc(1.48rem + 1px) !important;
+//  margin-top: -3px;
+//  padding-top: 0.25rem;
+//  padding-bottom: 0.25rem;
+//  font-size: $font-size-sm;
+//}

@@ -1,0 +1,14 @@
+@import '../../../styles/variables/bootstrap';
+
+::ng-deep {
+  .ag-menu {
+    overflow: initial;
+
+    .ag-filter,
+    .ag-menu-column-select-wrapper {
+      width: 240px;
+      height: initial;
+      max-height: 480px;
+    }
+  }
+}

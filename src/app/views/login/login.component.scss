@@ -1,0 +1,32 @@
+@import '../../../styles/variables/bootstrap';
+
+.left-block {
+  color: var(--white);
+  background: var(--primary);
+
+  .app-logo-container {
+    background: var(--white);
+  }
+}
+
+.right-block {
+  background: var(--light);
+
+  .right-block-header {
+    color: var(--gray);
+    font-size: $display4-size;
+    white-space: nowrap;
+    img {
+      width: 60px;
+      margin-top: -10px;
+      border: 3px solid var(--gray);
+    }
+  }
+
+  .right-block-subheader {
+    color: var(--primary);
+    font-size: $font-size-lg;
+    text-align: right;
+    padding: map-get($spacers, 1);
+  }
+}

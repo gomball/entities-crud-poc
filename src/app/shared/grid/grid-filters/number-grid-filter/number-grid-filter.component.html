@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row input-row">
+    <div class="col">
+      <ecp-input type="number" ecpCoreControlLayout size="sm" layout="stacked"
+                 [label]="'value' | translate"
+                 [ngModel]="model.value" (ngModelChange)="setValue($event)"></ecp-input>
+    </div>
+  </div>
+  <div class="row input-row" [show]="model.operator === 'inrange'">
+    <div class="col">
+      <ecp-input type="number" ecpCoreControlLayout size="sm" layout="stacked"
+                 [label]="('value' | translate) + ' 2'"
+                 [ngModel]="model.value2" (ngModelChange)="setValue2($event)"></ecp-input>
+    </div>
+  </div>
+  <div class="row input-row">
+    <div class="col">
+      <ecp-select ecpCoreControlLayout  layout="stacked"
+                  [label]="'operator' | translate"
+                  [ngModel]="model.operator" (ngModelChange)="setOperator($event)"
+                  [collection]="operators"></ecp-select>
+    </div>
+  </div>
+  <div class="row buttons-row">
+    <div class="col">
+      <button class="btn btn-sm btn-primary btn-outline btn-block"
+              (click)="setValue(null)">
+        <span class="fas fa-times"></span> {{'clear' | translate}}
+      </button>
+    </div>
+  </div>
+</div>

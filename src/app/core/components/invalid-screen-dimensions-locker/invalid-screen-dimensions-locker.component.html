@@ -1,0 +1,3 @@
+<div class="message-container" [style.display]="(isScreenDimensionsOk$ | async) ? 'block' : 'none'">
+  <div class="message">{{message}}</div>
+</div>

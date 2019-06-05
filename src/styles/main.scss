@@ -1,0 +1,23 @@
+@import './typography/open-sans';
+
+/*
+ * general (bootstrap) styles are loaded, compiled, processed here. themes are created through css variables on theme files (./themes/...)
+ */
+@import './variables/bootstrap';
+@import '~bootstrap/scss/bootstrap';
+@import './tweaks/bootstrap';
+
+/*
+ * grid styles are loaded, compiled, processed and themed directly on theme files (./themes/...)
+ */
+@import './variables/ag-grid';
+@import '~ag-grid-community/src/styles/ag-grid';
+@import '~ag-grid-community/src/styles/ag-theme-bootstrap';
+@import './tweaks/ag-grid';
+
+@import '~ngx-toastr/toastr-bs4-alert';
+@import './tweaks/ngx-toastr';
+
+@import './variables/font-awesome';
+
+@import './common/app-misc';

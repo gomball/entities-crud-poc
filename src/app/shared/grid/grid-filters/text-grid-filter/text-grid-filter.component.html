@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row input-row">
+    <div class="col">
+      <ecp-input ecpCoreControlLayout size="sm" layout="stacked"
+                 [label]="'value' | translate"
+                 [ngModel]="model.value" (ngModelChange)="setValue($event)"></ecp-input>
+    </div>
+  </div>
+  <div class="row input-row">
+    <div class="col">
+      <ecp-select ecpCoreControlLayout size="sm" layout="stacked"
+                  [label]="'operator' | translate"
+                  [ngModel]="model.operator" (ngModelChange)="setOperator($event)"
+                  [collection]="operators"></ecp-select>
+    </div>
+  </div>
+  <div class="row buttons-row">
+    <div class="col">
+      <button class="btn btn-sm btn-primary btn-outline btn-block"
+              (click)="setValue(null)">
+        <span class="fas fa-times"></span> {{'clear' | translate}}
+      </button>
+    </div>
+  </div>
+</div>

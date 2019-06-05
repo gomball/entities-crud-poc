@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h5 class="modal-title">
+    <span class="fas fa-exclamation-triangle"></span>
+    {{title}}
+  </h5>
+  <button type="button" class="close" aria-label="Close" (click)="close(false)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  {{message}}
+  <input type="text" class="form-control form-control-sm" [(ngModel)]="value">
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-primary" (click)="close(true, value)">{{'accept' | translate}}</button>
+  <button type="button" class="btn btn-outline-dark" (click)="close(false)">{{'cancel' | translate}}</button>
+</div>

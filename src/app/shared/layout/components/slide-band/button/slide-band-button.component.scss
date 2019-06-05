@@ -1,0 +1,16 @@
+@import '../../../../../../styles/variables/bootstrap';
+
+:host {
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: map-get($spacers, 2);
+  padding-right: map-get($spacers, 2);
+}
+
+.slide-band-button-label {
+  font-size: $font-size-sm;
+  line-height: $font-size-sm;
+  padding-left: map-get($spacers, 1);
+}
+

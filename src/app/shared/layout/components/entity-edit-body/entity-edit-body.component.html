@@ -1,0 +1,8 @@
+<div class="h-100">
+  <div class="float-left h-100">
+    <ng-content select="ecp-entity-edit-sidebar"></ng-content>
+  </div>
+  <div class="h-100" [style.padding-left.px]="contentLeftPadding">
+    <ng-content select="router-outlet"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+@import '../../../../../styles/variables/bootstrap';
+
+::ng-deep {
+  [entity-list-server-filters] {
+    .row {
+      margin-bottom: map-get($spacers, 1);
+    }
+  }
+}

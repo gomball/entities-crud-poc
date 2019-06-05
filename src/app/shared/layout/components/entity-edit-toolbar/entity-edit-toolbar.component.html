@@ -1,0 +1,36 @@
+<div class="container-fluid py-2">
+  <div class="row">
+    <div *ngIf="editionMode" class="col-auto">
+      <div class="btn-group main-actions">
+        <button type="button" class="btn btn-green" [disabled]="entityService.form.invalid || entityService.form.pristine"
+          (click)="onSave()">
+          <span class="far fa-save"></span>
+        </button>
+      </div>
+      <!-- styles in comp. scss file -->
+      <div class="btn-group btn-group-vertical aside-main-actions">
+        <button type="button" class="btn btn-outline-blue" [disabled]="entityService.form.dirty" (click)="onBack()">
+          <span class="fas fa-arrow-left"></span> {{'back' | translate}}
+        </button>
+        <button type="button" class="btn btn-outline-yellow" [disabled]="entityService.form.pristine" (click)="onUndo()">
+          <span class="fas fa-undo"></span> {{'undo' | translate}}
+        </button>
+        <button type="button" class="btn btn-outline-red" [disabled]="entityService.isCreateOperation || entityService.form.dirty"
+          (click)="onDelete()">
+          <span class="fas fa-times"></span> {{'delete' | translate}}
+        </button>
+      </div>
+    </div>
+    <div *ngIf="!editionMode" class="col-auto">
+      <div class="btn-group main-actions">
+        <button type="button" class="btn btn-blue" [disabled]="false" (click)="onBack()">
+          <span class="fas fa-arrow-left"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="col">
+      <ng-content select="ecp-slide-band"></ng-content>
+    </div>
+  </div>
+</div>

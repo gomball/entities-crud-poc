@@ -1,0 +1,13 @@
+<nav class="navbar" [style.height.px]="topbarHeight$ | async">
+  <a class="navbar-brand" (click)="service.gotoMenu()">
+    <span class="fas fa-bars menu-icon"></span>
+    APP
+  </a>
+  <div class="navbar-nav mr-auto">
+    {{service.breadcrumbs$ | async}}
+  </div>
+  <div class="navbar-nav flex-row">
+    <a class="nav-item"><span class="fas fa-user"></span> {{service.session?.user?.UserName}}</a>
+    <a class="nav-item"><span class="fas fa-cogs"></span></a>
+  </div>
+</nav>

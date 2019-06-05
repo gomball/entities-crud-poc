@@ -1,0 +1,8 @@
+<!-- label inserted by 'ControlLayoutDirective' -->
+<select class="form-control" [ngClass]="!isControlValid ? 'is-invalid' : ''"
+        [(ngModel)]="model">
+  <option *ngFor="let element of collection"
+          [value]="getValue(element)">
+    {{getDescription(element)}}
+  </option>
+</select>

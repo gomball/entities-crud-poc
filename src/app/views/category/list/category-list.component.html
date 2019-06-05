@@ -1,0 +1,9 @@
+<ecp-entity-list-toolbar #entityListToolbar [entityService]="entityService">
+  <ecp-query-filter-builder
+    entity-list-server-filters
+    [entityName]="entityService.entityDescription.entityName"
+    [(ngModel)]="entityService.serverFilters"
+  ></ecp-query-filter-builder>
+</ecp-entity-list-toolbar>
+
+<ecp-grid #mainGrid="gridComponent" [options]="entityService.gridOptions" [data]="entityService.entityList$ | async"></ecp-grid>

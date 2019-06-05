@@ -1,0 +1,130 @@
+<div class="container-fluid">
+  <div class="row justify-content-start" [show]="!visible">
+    <div class="col-12">
+      <ng-container *ngTemplateOutlet="toggleButton"></ng-container>
+      {{ 'filter' | translate }}: {{ summary }}
+    </div>
+  </div>
+
+  <div class="row justify-content-start position-absolute bg-white shadow w-50" style="z-index: 1; min-width: 680px;" [show]="visible">
+    <div class="col">
+      <ng-container *ngTemplateOutlet="toggleButton"></ng-container>
+      {{ 'filter' | translate }}
+    </div>
+    <div class="col-2">
+      <ecp-select
+        ecpCoreControlLayout
+        size="sm"
+        width="3"
+        layout="none"
+        [(ngModel)]="filterStateName"
+        (ngModelChange)="applyState($event)"
+        [collection]="filterStateNames"
+        [translateDescription]="false"
+      ></ecp-select>
+    </div>
+    <div class="col-auto">
+      <div class="btn-group" ecpCoreControlLayout size="sm">
+        <button class="btn btn-outline-secondary" (click)="saveState()" [ngbTooltip]="'save' | translate">
+          <span class="fas fa-save"></span>
+        </button>
+        <button class="btn btn-outline-secondary" (click)="removeState()" [disabled]="!filterStateName" [ngbTooltip]="'delete' | translate">
+          <span class="far fa-trash-alt"></span>
+        </button>
+      </div>
+    </div>
+    <div class="w-100 m-2 border"></div>
+    <div class="col-12">
+      <query-builder [config]="config" [classNames]="classNames" [(ngModel)]="query">
+        <ng-container *queryButtonGroup="let ruleset; let addRule = addRule; let addRuleSet = addRuleSet; let removeRuleSet = removeRuleSet">
+          <div class="btn-group btn-group-sm mr-1">
+            <button type="button" class="btn btn-outline-secondary btn-sm" (click)="addRuleSet()">
+              <span class="fas fa-plus"></span> {{ 'group' | translate }}
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" (click)="removeRuleSet()">
+              <span class="fas fa-minus"></span> {{ 'group' | translate }}
+            </button>
+          </div>
+          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="addRule()">
+            <span class="fas fa-plus"></span> {{ 'filter' | translate }}
+          </button>
+        </ng-container>
+        <ng-container *queryRemoveButton="let rule; let removeRule = removeRule">
+          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="removeRule(rule)">
+            <span class="fas fa-minus"></span> {{ 'filter' | translate }}
+          </button>
+          </ng-container>
+        <ng-container *querySwitchGroup="let ruleset; let onChange = onChange">
+          <div
+            *ngIf="ruleset"
+            class="btn-group btn-group-toggle"
+            ngbRadioGroup
+            name="radioBasic"
+            [(ngModel)]="ruleset.condition"
+            (ngModelChange)="onChange($event)"
+          >
+            <label ngbButtonLabel class="btn btn-outline-secondary btn-sm">
+              <input ngbButton type="radio" value="and" />{{ 'and' | translate }}
+            </label>
+            <label ngbButtonLabel class="btn btn-outline-secondary btn-sm">
+              <input ngbButton type="radio" value="or" />{{ 'or' | translate }}
+            </label>
+          </div>
+        </ng-container>
+
+        <ng-container *queryInput="let rule; type: 'string'; let onChange = onChange">
+          <ecp-input
+            type="text"
+            ecpCoreControlLayout
+            size="sm"
+            width="3"
+            [(ngModel)]="rule.value"
+            (ngModelChange)="onChange($event)"
+          ></ecp-input>
+        </ng-container>
+
+        <ng-container *queryInput="let rule; type: 'number'; let onChange = onChange">
+          <ecp-input
+            type="number"
+            ecpCoreControlLayout
+            size="sm"
+            width="3"
+            [(ngModel)]="rule.value"
+            (ngModelChange)="onChange($event)"
+          ></ecp-input>
+        </ng-container>
+
+        <ng-container *queryInput="let rule; type: 'date'; let onChange = onChange">
+          <ecp-datepicker
+            ecpCoreControlLayout
+            size="sm"
+            width="3"
+            [(ngModel)]="rule.value"
+            (ngModelChange)="onChange($event)"
+          ></ecp-datepicker>
+        </ng-container>
+
+        <ng-container *queryInput="let rule; type: 'string-eased'; let onChange = onChange">
+          <ecp-eased-input
+            ecpCoreControlLayout
+            size="sm"
+            width="6"
+            valueProperty="id"
+            descriptionProperty="name"
+            type="party"
+            tags=""
+            [(ngModel)]="rule.value"
+            (ngModelChange)="onChange($event)"
+          ></ecp-eased-input>
+        </ng-container>
+      </query-builder>
+    </div>
+  </div>
+</div>
+
+<ng-template #toggleButton>
+  <button type="button" class="btn btn-sm btn-outline-secondary border-0" (click)="visible = !visible">
+    <span [show]="!visible"><span class="fas fa-chevron-right fa-fw"></span></span>
+    <span [show]="visible"><span class="fas fa-chevron-down fa-fw"></span></span>
+  </button>
+</ng-template>

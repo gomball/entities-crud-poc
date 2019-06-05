@@ -1,0 +1,20 @@
+@import '../../../../../styles/variables/bootstrap';
+
+:host {
+  display: inline-block;
+  &:not(:last-child) {
+    margin-right: map-get($spacers, 3);
+  }
+}
+
+.slide-band-tittle {
+  display: block;
+  font-size: $font-size-sm;
+  line-height: $font-size-sm; // SIC!!!
+  padding: 0;
+}
+
+.toggle-button {
+  padding-left: map-get($spacers, 1);
+  padding-right: map-get($spacers, 1);
+}

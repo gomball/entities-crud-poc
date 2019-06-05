@@ -1,0 +1,34 @@
+@import '../../../../styles/variables/bootstrap';
+
+.app-spinner {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+
+  &.visible {
+    display: block;
+  }
+
+  .app-spinner-message-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    opacity: 0.5;
+  }
+  .app-spinner-message {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: $font-size-lg;
+    background: var(--gray-very-light);
+    opacity: 0.75;
+    margin: 0;
+    padding: map-get($spacers, 1);
+  }
+}

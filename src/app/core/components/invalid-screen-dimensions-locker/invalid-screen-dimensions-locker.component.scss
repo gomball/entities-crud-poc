@@ -1,0 +1,22 @@
+@import '../../../../styles/variables/bootstrap';
+
+.message-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-width: unset;
+  top: 0;
+  left: 0;
+  background: var(--gray-dark);
+  z-index: 2147483647;
+
+  .message {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: var(--gray-very-light);
+    font-size: $display4-size;
+    padding: map-get($spacers, 4);
+  }
+}

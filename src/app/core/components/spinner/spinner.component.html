@@ -1,0 +1,9 @@
+<div class="app-spinner" [class.visible]="!!(service.spinnerMessage$ | async) || (service.pendingHttpCall$ | async)">
+  <div class="app-spinner-message-container">
+
+  </div>
+  <h5 class="app-spinner-message">
+    <span class="app-spinner-icon fas fa-circle-notch fa-spin fa-2x fa-fw"></span>
+    {{(service.spinnerMessage$ | async)}}
+  </h5>
+</div>

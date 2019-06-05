@@ -1,0 +1,153 @@
+@import './bootstrap';
+
+$foreground-opacity: 1;
+$secondary-foreground-color-opacity: 1;
+$disabled-foreground-color-opacity: 0.5;
+
+// Sizing
+$grid-size: 4px;
+$icon-size: 12px;
+$header-height: $grid-size * 6 + 1;
+$row-height: ($grid-size * 6 + 1);
+$cell-horizontal-padding: $grid-size * 1;
+$virtual-item-height: $grid-size * 5;
+$header-icon-size: 14px;
+
+// Icons
+$icons-path: '~ag-grid-community/src/styles/icons/';
+
+// Fonts
+$font-family: $font-family-base;
+$font-size: $font-size-sm;
+$font-weight: $font-weight-normal;
+
+$secondary-font-family: $font-family;
+$secondary-font-size: $font-size;
+$secondary-font-weight: $font-weight;
+
+// Colors
+$icon-color: theme-color('dark');
+$foreground-color: rgba(theme-color('black'), $foreground-opacity);
+$secondary-foreground-color: rgba(theme-color('dark'), $secondary-foreground-color-opacity);
+$disabled-foreground-color: rgba(theme-color('black'), $disabled-foreground-color-opacity);
+$menu-option-active-color: #bde2e5;
+
+$card-background-color: #f6f6f6;
+$border-color: transparent;
+$primary-color: theme-color('black');
+$accent-color: theme-color('primary-dark');
+
+$background-color: theme-color('white');
+$odd-row-background-color: #f6f6f6;
+
+$editor-background-color: #f6f6f6;
+
+$header-background-color: theme-color('primary-light');
+$header-background-image: none;
+$panel-background-color: #f6f6f6;
+
+$tool-panel-background-color: #f6f6f6;
+
+$chip-background-color: #ecf0f1;
+
+$range-selection-background-color: rgba(120, 120, 120, 0.4);
+$range-selection-highlight-color: rgba(255, 255, 255, 0.4);
+
+$hover-color: #e6e6e6;
+
+$selected-color: $menu-option-active-color;
+
+$cell-data-changed-color: theme-color('white');
+
+$focused-cell-border-color: darkgrey;
+
+$tab-background-color: #e6e6e6;
+
+$cell-highlight-border: 2px solid darkgreen;
+$cell-horizontal-border: none;
+
+$ag-range-selected-color-1: rgba(120, 120, 120, 0.4);
+$ag-range-selected-color-2: rgba(80, 80, 80, 0.4);
+$ag-range-selected-color-3: rgba(40, 40, 40, 0.4);
+$ag-range-selected-color-4: rgba(0, 0, 0, 0.4);
+
+$row-floating-background-color: #f0f0f0;
+$row-stub-background-color: #f0f0f0;
+
+// delta changes
+$value-change-delta-up-color: darkgreen;
+$value-change-delta-down-color: darkred;
+$value-change-value-highlight-background-color: #cec;
+
+// $params: (
+//     grid-size: $grid-size,
+//     icon-size: $icon-size,
+//     header-icon-size: $header-icon-size,
+//     row-height: $row-height,
+//     header-height: $header-height,
+//     virtual-item-height: $virtual-item-height,
+//     rich-select-item-height: $row-height,
+//     cell-horizontal-padding: $cell-horizontal-padding,
+//     toolpanel-indent-size: $toolpanel-indent-size,
+//     row-group-indent-size: $row-group-indent-size,
+//     icons-path: $icons-path,
+//     font-family: $font-family,
+//     font-size: $font-size,
+//     font-weight: $font-weight,
+//     secondary-font-family: $secondary-font-family,
+//     secondary-font-size: $secondary-font-size,
+//     secondary-font-weight: $secondary-font-weight,
+//     foreground-color: $foreground-color,
+//     foreground-opacity: $foreground-opacity,
+//     secondary-foreground-color-opacity: $secondary-foreground-color-opacity,
+//     secondary-foreground-color: $secondary-foreground-color,
+//     disabled-foreground-color-opacity: $disabled-foreground-color-opacity,
+//     disabled-foreground-color: $disabled-foreground-color,
+//     background-color: $background-color,
+//     tab-background-color: $tab-background-color,
+//     odd-row-background-color: $odd-row-background-color,
+//     header-cell-moving-background-color: $header-cell-moving-background-color,
+//     icon-color: $icon-color,
+//     border-color: $border-color,
+//     button-background-color: transparent,
+//     cell-data-changed-color: $cell-data-changed-color,
+//     chip-background-color: $chip-background-color,
+//     editor-background-color: $editor-background-color,
+//     range-selection-background-color: $range-selection-background-color,
+//     range-selection-highlight-color: $range-selection-highlight-color,
+//     header-background-color: $header-background-color,
+//     header-background-image: $header-background-image,
+//     panel-background-color: $panel-background-color,
+//     tool-panel-background-color: $tool-panel-background-color,
+//     card-background-color: $card-background-color,
+//     accent-color: $accent-color,
+//     primary-color: $primary-color,
+//     hover-color: $hover-color,
+//     selected-color: $selected-color,
+//     icon-opacity: $foreground-opacity,
+//     button-text-transform: uppercase,
+//     card-radius: $card-radius,
+//     card-shadow: $card-shadow,
+//     input-height: $grid-size * 4,
+//     focused-cell-border-color: $focused-cell-border-color,
+//     menu-option-active-color: $menu-option-active-color,
+//     ag-range-selected-color-1: $ag-range-selected-color-1,
+//     ag-range-selected-color-2: $ag-range-selected-color-2,
+//     ag-range-selected-color-3: $ag-range-selected-color-3,
+//     ag-range-selected-color-4: $ag-range-selected-color-4,
+//     cell-highlight-border: $cell-highlight-border,
+//     cell-horizontal-border: $cell-horizontal-border,
+//     value-change-delta-up-color: $value-change-delta-up-color,
+//     value-change-delta-down-color: $value-change-delta-down-color,
+//     value-change-value-highlight-background-color: $value-change-value-highlight-background-color,
+//     row-floating-background-color: $row-floating-background-color,
+//     row-stub-background-color: $row-stub-background-color,
+// );
+
+// .ag-theme-bootstrap {
+//     @include ag-theme-classic($params);
+
+//     %card {
+//         border: 1px solid #ccc;
+//     }
+// }

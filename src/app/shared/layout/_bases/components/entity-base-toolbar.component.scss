@@ -1,0 +1,22 @@
+@import '../../../../../styles/variables/bootstrap';
+:host {
+  display: block;
+}
+
+
+.btn-group.main-actions::ng-deep {
+  & > .btn {
+    font-size: $font-size-lg * 1.2;
+    padding: map-get($spacers, 2) * 1.2 map-get($spacers, 3);
+  }
+}
+
+.btn-group-vertical.aside-main-actions {
+  & > .btn {
+    font-size: $font-size-sm * 0.9;
+    padding: 0.15rem map-get($spacers, 1);
+    line-height: 1;
+    border-width: 0;
+    text-align: left;
+  }
+}

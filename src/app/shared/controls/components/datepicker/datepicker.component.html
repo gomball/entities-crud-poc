@@ -1,0 +1,10 @@
+<!-- label inserted by 'ControlLayoutDirective' -->
+<div class="input-group">
+  <input type="text" class="form-control" [ngClass]="!isControlValid ? 'is-invalid' : ''" [(ngModel)]="model"
+    ngbDatepicker #d="ngbDatepicker">
+  <div class="input-group-append">
+    <button type="button" class="btn btn-outline-secondary" (click)="d.toggle()">
+      <span class="far fa-calendar-alt"></span>
+    </button>
+  </div>
+</div>

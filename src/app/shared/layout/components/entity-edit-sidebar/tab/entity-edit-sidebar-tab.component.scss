@@ -1,0 +1,64 @@
+@import '../../../../../../styles/variables/bootstrap';
+
+$reduction-factor: 0.85;
+
+:host {
+  display: block;
+  position: relative;
+  padding: map-get($spacers, 2) * $reduction-factor map-get($spacers, 2);
+  line-height: $line-height-sm * $reduction-factor;
+  white-space: nowrap;
+  text-transform: uppercase;
+  cursor: pointer;
+  .tab-initials {
+    display: block;
+    font-size: $font-size-sm * $reduction-factor;
+  }
+  &:not(.disabled) {
+    &:hover {
+      border: none;
+      background: var(--primary-dark);
+    }
+    &.active {
+      background: var(--primary);
+    }
+  }
+  &.disabled {
+    cursor: default;
+    background: var(--gray-light);
+    &.active {
+      background: var(--gray);
+    }
+  }
+}
+
+.tab-title-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px; // width of sidebar
+  color: var(--primary-dark);
+  background: var(--gray-very-light);
+  z-index: 3;
+  padding: map-get($spacers, 3) * $reduction-factor map-get($spacers, 2);
+  font-size: $font-size-base;
+  &.tab-title-invisible {
+    width: 0;
+    padding-right: 0;
+    padding-left: 0;
+    .tab-title-text {
+      visibility: hidden;
+    }
+  }
+  &.tab-title-visible {
+    width: 14rem;
+    transition: 100ms width 100ms ease-out, padding-left 100ms ease-out, padding-right 100ms ease-out;
+    transition-delay: 200ms;
+    padding-left: map-get($spacers, 2);
+    padding-right: map-get($spacers, 2);
+    .tab-title-text {
+      visibility: visible;
+      transition: visibility 200ms step-end;
+    }
+  }
+}

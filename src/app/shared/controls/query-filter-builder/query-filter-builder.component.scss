@@ -1,0 +1,6 @@
+::ng-deep {
+  query-builder > .q-tree-container {
+    // allows datepickers to be displayed nicely
+    overflow: unset !important;
+  }
+}

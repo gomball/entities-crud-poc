@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="error-template">
+          <h1>Ooooops!</h1>
+          <h2>404 - página no encontrada</h2>
+          <div class="error-details">
+            lo sentimos, pero ha ocurrido un error: la página solicitada no ha sido encontrada.
+          </div>
+          <div class="error-actions">
+            <button type="button" class="btn btn-primary btn-lg" (click)="navigationService.gotoMenu()">
+              <span class="fas fa-home"></span>
+              inicio
+            </button>
+            <button type="button" class="btn btn-default btn-lg" (click)="modalService.alert('WIP: contant info')">
+              <span class="fas fa-envelope"></span>
+              soporte
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

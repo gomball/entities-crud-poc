@@ -1,0 +1,23 @@
+@import '../../../../../styles/variables/bootstrap';
+
+:host {
+  display: block;
+  height: 100%;
+  background: var(--primary-dark);
+  &.disabled {
+    background: var(--gray-light);
+  }
+}
+
+ul.list-group {
+  //flex: 0 0 auto;
+  //overflow: visible;
+
+  .list-group-item.list-group-item-action {
+    border: none;
+    border-radius: 0;
+    color: var(--white);
+    background: transparent;
+    padding: 0;
+  }
+}

@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <li *ngFor="let tab of sideBarDefinition.tabs; let index = index;" [id]="tab.id" class="list-group-item list-group-item-action">
+    <ecp-entity-edit-sidebar-tab [tab]="tab" [active]="activeTabIndex === index" [disabled]="disabled" (click)="entityService.goToTab$(tab)"></ecp-entity-edit-sidebar-tab>
+  </li>
+</ul>
